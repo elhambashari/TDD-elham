@@ -41,6 +41,20 @@ function addToCart(newItem) {
 	cart.push(cartItem)
 }
 
+function getItem(index){
+	return cart[index]
+}
 
 
-export { getCartItemCount, addToCart }
+
+
+
+
+
+
+function clearCart(){
+	cart=[]
+	idCounter=2002
+}
+
+export { getCartItemCount, addToCart,getItem ,clearCart}

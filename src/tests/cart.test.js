@@ -1,5 +1,5 @@
 
-import { addToCart, getCartItemCount } from "../cart"
+import { addToCart, getCartItemCount,getItem,clearCart } from "../cart"
 
 
 const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
@@ -29,9 +29,9 @@ describe('Cart', () => {
 
 
 test('getitem return true',()=>{
-	const produkt = { id: 1001, name: "Vattenpistol", price: 40 };
+      addToCart(sampleProduct);
 	  const item = getItem(0)
-	  expect(item.item.name).toBe("vattenpistol")
+	  expect(item.item.name).toBe("Vattenpistol")
 })
 	
 	
