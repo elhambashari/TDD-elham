@@ -28,6 +28,8 @@ describe('Cart', () => {
 	})
 
 
+
+
 test('getitem return true',()=>{
       addToCart(sampleProduct);
 	  const item = getItem(0)
@@ -36,7 +38,7 @@ test('getitem return true',()=>{
 
 
 
-test('get total all kundvarg item',()=>{
+test('get total all kundvarg item value',()=>{
 	addToCart(sampleProduct)
 	addToCart(anotherProduct)
 		expect(getTotalCartValue(cart)).toBe(140)

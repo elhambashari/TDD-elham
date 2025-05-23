@@ -28,7 +28,7 @@ let idCounter = 2002
 // Du får en funktion att börja med
 
 function getCartItemCount() {
-	throw new Error('TODO')
+	return cart.reduce((total,item)=>total+item.amount,0)
 }
 
 function addToCart(newItem) {
@@ -45,6 +45,10 @@ function getItem(index){
 	return cart[index]
 }
 
+function getTotalCartValue(cart){
+	return cart.reduce((total,item)=>total+item.item.price* item.amount,0)
+}
+
 
 
 
@@ -57,4 +61,4 @@ function clearCart(){
 	idCounter=2002
 }
 
-export { getCartItemCount, addToCart,getItem ,clearCart}
+export { getCartItemCount, addToCart,getItem ,clearCart,getTotalCartValue}
