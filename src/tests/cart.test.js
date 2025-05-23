@@ -1,5 +1,5 @@
 
-import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue,removeFromCart } from "../cart"
+import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue,removeFromCart,editCart } from "../cart"
 
 
 const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
@@ -54,6 +54,14 @@ test('ta bort item från varukorg',()=>{
 	expect(getCartItemCount()).toBe(0)
 })
 
+
+test('ändra antal item(edit)',()=>{
+	addToCart(sampleProduct)
+	const item= getItem(0)
+	editCart(item.id,{amount:4})
+	const update= getItem(0)
+	expect(update.amount).toBe(4)
+})
 	
 	
 })
