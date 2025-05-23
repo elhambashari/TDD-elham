@@ -15,6 +15,13 @@ const exampleCartObject = {
 // Group tests using "describe"
 describe('Validation', () => {
 
+
+	test('om det finns en riktig produkt return true',()=>{
+		expect(isCartItem({id: 1001,
+	name: 'Badanka',
+	price: 500})).toBe(true)
+	})
+
 	// Använd en "test" eller "it" (de är synonymer) för varje testfall
 	/* Exempel på syntax:
 	test('beskriv testfallet', () => {
