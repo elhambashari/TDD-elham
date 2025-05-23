@@ -1,11 +1,13 @@
 
-import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue } from "../cart"
+import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue,removeFromCart } from "../cart"
 
 
 const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
 const anotherProduct = { id:1002, name: "Badanka", price: 100 }
 describe('Cart', () => {
+	
 	beforeEach(() => {
+		
 		// Denna kod körs före varje test. Det är för att rensa kundvagnen, så inte saker ligger kvar från föregående test.
 		clearCart()
 	})
@@ -43,6 +45,13 @@ test('get total all kundvarg item value',()=>{
 	addToCart(anotherProduct)
 		expect(getTotalCartValue(cart)).toBe(140)
 	
+})
+
+
+test('ta bort item från varukorg',()=>{
+	addToCart(sampleProduct)
+	removeFromCart(item.id)
+	expect(getCartItemCount()).toBe(0)
 })
 
 	
