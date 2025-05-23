@@ -1,5 +1,5 @@
 
-import { addToCart, getCartItemCount,getItem,clearCart } from "../cart"
+import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue } from "../cart"
 
 
 const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
@@ -33,6 +33,16 @@ test('getitem return true',()=>{
 	  const item = getItem(0)
 	  expect(item.item.name).toBe("Vattenpistol")
 })
+
+
+
+test('get total all kundvarg item',()=>{
+	addToCart(sampleProduct)
+	addToCart(anotherProduct)
+		expect(getTotalCartValue(cart)).toBe(140)
+	
+})
+
 	
 	
 })
