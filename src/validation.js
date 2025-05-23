@@ -20,7 +20,9 @@ function isCartItem(obj) {
 }
 
 
-function isProduct(maybeProduct) {}
+function isProduct(obj) {
+	return
+}
 
 
 export { isCartItem, isProduct }

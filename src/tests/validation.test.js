@@ -1,5 +1,5 @@
 import { isCartItem, isProduct } from "../validation.js"
-// Examples of a valid product and a valid cart item. You may use these when testing below.
+
 const exampleProduct = {
 	id: 1001,
 	name: 'Badanka',
@@ -15,8 +15,7 @@ const exampleCartObject = {
 // Group tests using "describe"
 describe('Validation', () => {
 
-
-	test('om det finns en riktig produkt return true',()=>{
+	test('om det finns en riktig cartitem return true',()=>{
 		expect(isCartItem({
 	id: 2001,
 	amount: 1,
@@ -24,6 +23,39 @@ describe('Validation', () => {
 }
 )).toBe(true)
 	})
+
+
+
+	test('om det finns fel cartitem  return false',()=>{
+		expect(isCartItem({id:1,amount:1})).toBe(false)
+	})
+
+
+	test('om type är fel return false',()=>{
+		expect(isCartItem({id:"elham",amount:"hej",item:null})).toBe(false)
+	})
+
+
+
+
+
+	test('om det är en riktig produkt return true',()=>{
+		expect(isProduct(exampleProduct)).toBe(true)
+	})
+
+	test('om det finns en fel produkt return false',()=>{
+		expect(isProduct({id:1001,price:500})).toBe(false)
+	})
+
+	test('om det finns en fel produkt med fel type return false',()=>{
+		expect(isProduct({id:"elham",name:"hej",price:"hejdå"})).toBe(false)
+	})
+
+
+
+
+	
+
 
 	// Använd en "test" eller "it" (de är synonymer) för varje testfall
 	/* Exempel på syntax:
