@@ -2,6 +2,8 @@
 import { addToCart, getCartItemCount } from "../cart"
 
 
+const sampleProduct = { id: 1, name: "Vattenpistol", price: 40 }
+
 describe('Cart', () => {
 	beforeEach(() => {
 		// Denna kod körs före varje test. Det är för att rensa kundvagnen, så inte saker ligger kvar från föregående test.
