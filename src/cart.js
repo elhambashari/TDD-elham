@@ -50,6 +50,12 @@ function getTotalCartValue(cart){
 }
 
 
+function removeFromCart(itemId){
+	return cart.filter(item=>item.id!== item.id)
+}
+
+
+
 
 
 
@@ -61,4 +67,4 @@ function clearCart(){
 	idCounter=2002
 }
 
-export { getCartItemCount, addToCart,getItem ,clearCart,getTotalCartValue}
+export { getCartItemCount, addToCart,getItem ,clearCart,getTotalCartValue,removeFromCart}
