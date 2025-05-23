@@ -1,9 +1,9 @@
-// importera här
+
 import { addToCart, getCartItemCount } from "../cart"
 
 
-const sampleProduct = { id: 1, name: "Vattenpistol", price: 40 }
-
+const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
+const anotherProduct = { id:1002, name: "Badanka", price: 100 }
 describe('Cart', () => {
 	beforeEach(() => {
 		// Denna kod körs före varje test. Det är för att rensa kundvagnen, så inte saker ligger kvar från föregående test.
@@ -28,5 +28,11 @@ describe('Cart', () => {
 	})
 
 
-	// -------------------------------------------------- //
+test('getitem return true',()=>{
+	const produkt = { id: 1001, name: "Vattenpistol", price: 40 };
+	  const item = getItem(0)
+	  expect(item.item.name).toBe("vattenpistol")
+})
+	
+	
 })
