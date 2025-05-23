@@ -45,13 +45,22 @@ function getItem(index){
 	return cart[index]
 }
 
-function getTotalCartValue(cart){
+function getTotalCartValue(){
 	return cart.reduce((total,item)=>total+item.item.price* item.amount,0)
 }
 
 
 function removeFromCart(itemId){
-	return cart.filter(item=>item.id!== item.id)
+	cart= cart.filter(item=>item.id!== item.id)
+}
+
+
+
+function editCart(itemId, newValues) {
+	const item = cart.find(item => item.id === itemId)
+	if (!item) return
+
+	Object.assign(item, newValues)
 }
 
 
@@ -67,4 +76,4 @@ function clearCart(){
 	idCounter=2002
 }
 
-export { getCartItemCount, addToCart,getItem ,clearCart,getTotalCartValue,removeFromCart}
+export { getCartItemCount, addToCart,getItem ,clearCart,getTotalCartValue,removeFromCart,editCart}

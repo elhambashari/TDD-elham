@@ -43,13 +43,14 @@ test('getitem return true',()=>{
 test('get total all kundvarg item value',()=>{
 	addToCart(sampleProduct)
 	addToCart(anotherProduct)
-		expect(getTotalCartValue(cart)).toBe(140)
+		expect(getTotalCartValue()).toBe(140)
 	
 })
 
 
 test('ta bort item från varukorg',()=>{
 	addToCart(sampleProduct)
+	const item = getItem(0);
 	removeFromCart(item.id)
 	expect(getCartItemCount()).toBe(0)
 })
@@ -61,6 +62,7 @@ test('ändra antal item(edit)',()=>{
 	editCart(item.id,{amount:4})
 	const update= getItem(0)
 	expect(update.amount).toBe(4)
+	expect(item.item.name).toBe("Vattenpistol")
 })
 	
 	
