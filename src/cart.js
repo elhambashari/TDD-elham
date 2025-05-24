@@ -34,7 +34,7 @@ function getTotalCartValue(){
 
 
 function removeFromCart(itemId){
-	cart= cart.filter(item=>item.id!== item.id)
+	cart= cart.filter(item=>item.id!== itemId)
 }
 
 
