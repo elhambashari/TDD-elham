@@ -18,8 +18,10 @@ function isCartItem(obj) {
 function isProduct(obj) {
 	return typeof obj==="object" && obj!== null &&
 	 'id' in obj &&
-	 typeof obj.id === 'number' && 'name' in obj &&
-	  typeof obj.name === 'string'&& 'price'in obj &&
+	 typeof obj.id === 'number' &&
+	  'name' in obj &&
+	  typeof obj.name === 'string'&& 
+	  'price'in obj &&
 	   typeof obj.price==='number';
 }
 
