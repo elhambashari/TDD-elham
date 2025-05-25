@@ -65,5 +65,15 @@ test('ändra antal item(edit)',()=>{
 	expect(item.item.name).toBe("Vattenpistol")
 })
 	
+
+
+test('rensa varukorg',()=>{
+	addToCart(sampleProduct)
+	addToCart(anotherProduct)
+	expect(getCartItemCount()).toBe(2)
+
+	clearCart()
+	expect(getCartItemCount()).toBe(0)
+})
 	
 })
