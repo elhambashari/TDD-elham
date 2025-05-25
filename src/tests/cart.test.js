@@ -16,6 +16,18 @@ describe('Cart', () => {
 	// -------------------------------------------------- //
 	// Skriv dina testfall här
 
+test('getcartitem return true',()=>{
+
+	addToCart(sampleProduct)
+	addToCart(anotherProduct)
+	const count= getCartItemCount()
+	expect(count).toBe(2)
+})
+
+
+
+
+
 	// Du får ett test att börja med
 	test('addToCart lägger till en ny produkt i kundvagnen', () => {
 		const itemCountBefore = getCartItemCount()
@@ -71,7 +83,6 @@ test('rensa varukorg',()=>{
 	addToCart(sampleProduct)
 	addToCart(anotherProduct)
 	expect(getCartItemCount()).toBe(2)
-
 	clearCart()
 	expect(getCartItemCount()).toBe(0)
 })
