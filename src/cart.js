@@ -4,7 +4,7 @@ import { isCartItem, isProduct } from "./validation.js"
 
 let cart = []
 let idCounter = 2002
-// -------------------------------------------------- //
+
 
 
 // Din kod börjar här
@@ -45,11 +45,6 @@ function editCart(itemId, newValues) {
 
 	Object.assign(item, newValues)
 }
-
-
-
-
-
 
 
 
