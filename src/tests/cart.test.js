@@ -37,7 +37,9 @@ test('addToCart lägger till en ny produkt i kundvagnen', () => {
 test('getitem return true',()=>{
       addToCart(sampleProduct);
 	  const item = getItem(0)
+
 	  expect(item.item.name).toBe("Vattenpistol")
+       expect(item.item.price).toBe(40)
 })
 
 
