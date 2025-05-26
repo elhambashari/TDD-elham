@@ -7,17 +7,14 @@ const anotherProduct = { id:1002, name: "Badanka", price: 100 }
 describe('Cart', () => {
 	
 	beforeEach(() => {
-		
-		// Denna kod körs före varje test. Det är för att rensa kundvagnen, så inte saker ligger kvar från föregående test.
+	
 		clearCart()
 	})
 
 
-	// -------------------------------------------------- //
 	// Skriv dina testfall här
 
-test('getcartitem return true',()=>{
-
+test('getcartitemcount return true',()=>{
 	addToCart(sampleProduct)
 	addToCart(anotherProduct)
 	const count= getCartItemCount()
@@ -25,16 +22,9 @@ test('getcartitem return true',()=>{
 })
 
 
-
-
-
-	// Du får ett test att börja med
-	test('addToCart lägger till en ny produkt i kundvagnen', () => {
+test('addToCart lägger till en ny produkt i kundvagnen', () => {
 		const itemCountBefore = getCartItemCount()
 		const input = { id: 1002, name: 'Vattenpistol', price: 40 }
-
-		// addToCart returnerar inget - den påverkar kundvagnen
-		// vi behöver använda getCartItemCount för att se om det har lagts till en ny produkt i kundvagnen
 		addToCart(input)
 		const itemCountAfter = getCartItemCount()
 

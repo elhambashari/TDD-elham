@@ -14,6 +14,8 @@ function getCartItemCount() {
 	return cart.reduce((total,item)=>total+item.amount,0)
 }
 
+
+
 function addToCart(newItem) {
 	if( !isProduct(newItem) ) {
 		return false
@@ -24,13 +26,19 @@ function addToCart(newItem) {
 	cart.push(cartItem)
 }
 
+
+
 function getItem(index){
 	return cart[index]
 }
 
+
+
+
 function getTotalCartValue(){
 	return cart.reduce((total,item)=>total+item.item.price* item.amount,0)
 }
+
 
 
 function removeFromCart(itemId){
