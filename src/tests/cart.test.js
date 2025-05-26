@@ -3,7 +3,7 @@ import { addToCart, getCartItemCount,getItem,clearCart,getTotalCartValue,removeF
 
 
 const sampleProduct = { id:1001, name: "Vattenpistol", price: 40 }
-const anotherProduct = { id:1002, name: "Badanka", price: 100 }
+const anotherProduct = { id:1002, name: "Badanka", price: 500 }
 describe('Cart', () => {
 	
 	beforeEach(() => {
@@ -27,7 +27,6 @@ test('addToCart lägger till en ny produkt i kundvagnen', () => {
 		const input = { id: 1002, name: 'Vattenpistol', price: 40 }
 		addToCart(input)
 		const itemCountAfter = getCartItemCount()
-
 		expect(itemCountAfter).toBe(itemCountBefore + 1)
 	})
 
@@ -37,17 +36,16 @@ test('addToCart lägger till en ny produkt i kundvagnen', () => {
 test('getitem return true',()=>{
       addToCart(sampleProduct);
 	  const item = getItem(0)
-
 	  expect(item.item.name).toBe("Vattenpistol")
        expect(item.item.price).toBe(40)
 })
 
 
 
-test('get total all kundvarg item value',()=>{
+test('get totalpris för all kundvarg item',()=>{
 	addToCart(sampleProduct)
 	addToCart(anotherProduct)
-		expect(getTotalCartValue()).toBe(140)
+	expect(getTotalCartValue()).toBe(540)
 	
 })
 
