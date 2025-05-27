@@ -41,9 +41,12 @@ function getTotalCartValue(){
 
 
 
+
 function removeFromCart(itemId){
 	cart= cart.filter(item=>item.id!== itemId)
 }
+
+
 
 
 
@@ -53,6 +56,9 @@ function editCart(itemId, newValues) {
 
 	Object.assign(item, newValues)
 }
+
+
+
 
 
 
