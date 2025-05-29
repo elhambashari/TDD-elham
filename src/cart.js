@@ -41,9 +41,8 @@ function getTotalCartValue(){
 
 
 
-
-function removeFromCart(itemId){
-	cart= cart.filter(item=>item.id!== itemId)
+function removeFromCart(itemId) {
+  cart = cart.filter(cartItem => cartItem.id !== itemId);
 }
 
 
