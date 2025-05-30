@@ -36,6 +36,11 @@ describe('Validation', () => {
 	})
 
 
+   test('return true för ett giltigt cart-objekt', () => {
+   expect(isCartItem(exampleCartObject)).toBe(true);
+  });
+
+
 
 
 
