@@ -16,12 +16,7 @@ const exampleCartObject = {
 describe('Validation', () => {
 
 	test('om det finns en riktig cartitem return true',()=>{
-		expect(isCartItem({
-	id: 2001,
-	amount: 1,
-	item: exampleProduct
-}
-)).toBe(true)
+		expect(isCartItem(exampleCartObject)).toBe(true)
 	})
 
 
