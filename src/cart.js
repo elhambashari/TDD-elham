@@ -1,6 +1,6 @@
 
 
-import { isCartItem, isProduct } from "./validation.js"
+import { isProduct } from "./validation.js"
 
 let cart = []
 let idCounter = 2002
@@ -16,6 +16,7 @@ function getCartItemCount() {
 
 
 
+
 function addToCart(newItem) {
 	if( !isProduct(newItem) ) {
 		return false
@@ -25,6 +26,7 @@ function addToCart(newItem) {
 	idCounter++
 	cart.push(cartItem)
 }
+
 
 
 
